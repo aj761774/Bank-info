@@ -16,11 +16,12 @@ const Bank = () => {
   );
   const [currentpageNo, setCurrentPageNo] = useState(1);
 
-  const totalNoPages = Math.ceil(bankDetailsData.length / rowPerPage);
-  const paginationToValue = totalNoPages < currentpageNo * rowPerPage ? totalNoPages : currentpageNo * rowPerPage;
-
+  const totalData = bankDetailsData.length;
+  const paginationFromValue = currentpageNo*rowPerPage - (rowPerPage - 1)
+  const paginationToValue = totalData < currentpageNo * rowPerPage ? totalData : currentpageNo * rowPerPage;
+  
   const handleNext = () => {
-    if (paginationToValue < totalNoPages) {
+    if (paginationToValue < totalData) {
       setCurrentPageNo((prev) => prev + 1);
     }
   };
@@ -264,10 +265,10 @@ const Bank = () => {
             <span className={`pagination-btn ${currentpageNo === 1 ? 'disabled' : ''}`} onClick={handlePrevious}>&#60;</span>
             <span>
               {" "}
-              {currentpageNo * rowPerPage - (rowPerPage - 1)} -{" "}
-              {paginationToValue} of {totalNoPages}
+              {paginationFromValue} -{" "}
+              {paginationToValue} of {bankDetailsData.length}
             </span>
-            <span className={`pagination-btn ${paginationToValue >= totalNoPages ? 'disabled' : ''}`} onClick={handleNext}>&#62;</span>
+            <span className={`pagination-btn ${paginationToValue >= totalData ? 'disabled' : ''}`} onClick={handleNext}>&#62;</span>
           </div>
         </div>}
     </div>
