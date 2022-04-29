@@ -1,0 +1,148 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.container > * {
+    box-sizing: border-box;
+}
+  
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+  
+.container .sidebar {
+    width: 15%;
+    border: 1px solid #000000;
+    height: 98vh;
+    font-weight: bold;
+}
+  
+.container .sidebar > div {
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    cursor: pointer;
+}
+  
+.container .main {
+    width: 84%;
+}
+  
+.container .main .filters {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.container .main .filters .title {
+    font-weight: bold;
+}
+  
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+  
+.container thead {
+    background-color: rgba(0,0,0,0.1);
+}
+    
+.container th, td {
+    padding: 6px ;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.8);
+    width: 12%;
+}
+
+.container th {
+   padding: 20px;
+}
+  
+.container .address-cell {
+    width: 39%;
+}
+
+.dropdown{
+    margin-right: 10px;
+}
+
+.fsc-code{
+    cursor: pointer;
+    color: blue;
+    font-weight: bold;
+  }
+
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination > div:last-child{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 84%;
+}
+
+.details > div{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.no-favourits {
+  font-size: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.pagination-btn.disabled {
+  color: rgba(0,0,0,0.5);
+}
